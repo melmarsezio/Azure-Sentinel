@@ -1,0 +1,60 @@
+{
+    "id": "EASM",
+    "title": "Microsoft Defender External Attack Surface Management",
+    "publisher": "Microsoft",
+    "logo": "Microsoft-Defender-EASM.svg",
+    "descriptionMarkdown": "MDEASM data connector gives richer insights into security events by supplementing details about externally exposed assets and their attack surfaces. Data from this connector helps identify and monitor internet-facing resources, vulnerabilities, and potential security risks across your organization's external attack surface. [Learn about MDEASM.](https://learn.microsoft.com/en-us/azure/external-attack-surface-management/overview)",
+    "graphQueries": [],
+    "sampleQueries": [],
+    "dataTypes": [],
+    "connectivityCriterias": [
+        {
+            "type": "EASM"
+        }
+    ],
+    "permissions": {
+        "tenant": [
+            "GlobalAdmin",
+            "SecurityAdmin"
+        ]
+    },
+    "availability": {
+        "status": 2
+    },
+    "instructionSteps": [
+        {
+            "instructions": [
+                {
+                    "parameters": {
+                        "type": "EASM",
+                        "description": "Connect Microsoft Defender External Attack Surface Management (EASM) assets to ingest into Microsoft Sentinel Lake.",
+                        "items": [
+                            {
+                                "label": "EASMDomain"
+                            },
+                            {
+                                "label": "EASMHost"
+                            },
+                            {
+                                "label": "EASMPage"
+                            },
+                            {
+                                "label": "EASMSslCert"
+                            },
+                            {
+                                "label": "EASMAutonomousSystem"
+                            },
+                            {
+                                "label": "EASMIpBlock"
+                            },
+                            {
+                                "label": "EASMIpAddress"
+                            }
+                        ]
+                    },
+                    "type": "MSG"
+                }
+            ]
+        }
+    ]
+}
