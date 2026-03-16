@@ -34,7 +34,6 @@
     "_solutionVersion": "3.0.0",
     "solutionId": "azuresentinel.azure-sentinel-solution-easm",
     "_solutionId": "[variables('solutionId')]",
-    "TemplateEmptyArray": "[json('[]')]",
     "uiConfigId1": "EASM",
     "_uiConfigId1": "[variables('uiConfigId1')]",
     "dataConnectorContentId1": "EASM",
@@ -74,11 +73,105 @@
                   "id": "[variables('_uiConfigId1')]",
                   "title": "Microsoft Defender External Attack Surface Management",
                   "publisher": "Microsoft",
-                  "logo": "Microsoft-Defender-EASM.svg",
+                  "logo": "MicrosoftDefenderEASM.svg",
                   "descriptionMarkdown": "MDEASM data connector gives richer insights into security events by supplementing details about externally exposed assets and their attack surfaces. Data from this connector helps identify and monitor internet-facing resources, vulnerabilities, and potential security risks across your organization's external attack surface. [Learn about MDEASM.](https://learn.microsoft.com/en-us/azure/external-attack-surface-management/overview)",
-                  "graphQueries": "[variables('TemplateEmptyArray')]",
-                  "sampleQueries": "[variables('TemplateEmptyArray')]",
-                  "dataTypes": "[variables('TemplateEmptyArray')]",
+                  "graphQueries": [
+                    {
+                      "metricName": "Total data received",
+                      "legend": "EASMDomain",
+                      "baseQuery": "EASMDomain"
+                    },
+                    {
+                      "metricName": "Total data received",
+                      "legend": "EASMHost",
+                      "baseQuery": "EASMHost"
+                    },
+                    {
+                      "metricName": "Total data received",
+                      "legend": "EASMPage",
+                      "baseQuery": "EASMPage"
+                    },
+                    {
+                      "metricName": "Total data received",
+                      "legend": "EASMSslCert",
+                      "baseQuery": "EASMSslCert"
+                    },
+                    {
+                      "metricName": "Total data received",
+                      "legend": "EASMAutonomousSystem",
+                      "baseQuery": "EASMAutonomousSystem"
+                    },
+                    {
+                      "metricName": "Total data received",
+                      "legend": "EASMIpBlock",
+                      "baseQuery": "EASMIpBlock"
+                    },
+                    {
+                      "metricName": "Total data received",
+                      "legend": "EASMIpAddress",
+                      "baseQuery": "EASMIpAddress"
+                    }
+                  ],
+                  "sampleQueries": [
+                    {
+                      "description": "EASMDomain logs",
+                      "lastDataReceivedQuery": "EASMDomain\n| sort by TimeGenerated"
+                    },
+                    {
+                      "description": "EASMHost logs",
+                      "lastDataReceivedQuery": "EASMHost\n| sort by TimeGenerated"
+                    },
+                    {
+                      "description": "EASMPage logs",
+                      "lastDataReceivedQuery": "EASMPage\n| sort by TimeGenerated"
+                    },
+                    {
+                      "description": "EASMSslCert logs",
+                      "lastDataReceivedQuery": "EASMSslCert\n| sort by TimeGenerated"
+                    },
+                    {
+                      "description": "EASMAutonomousSystem logs",
+                      "lastDataReceivedQuery": "EASMAutonomousSystem\n| sort by TimeGenerated"
+                    },
+                    {
+                      "description": "EASMIpBlock logs",
+                      "lastDataReceivedQuery": "EASMIpBlock\n| sort by TimeGenerated"
+                    },
+                    {
+                      "description": "EASMIpAddress logs",
+                      "lastDataReceivedQuery": "EASMIpAddress\n| sort by TimeGenerated"
+                    }
+                  ],
+                  "dataTypes": [
+                    {
+                      "name": "EASMDomain",
+                      "lastDataReceivedQuery": "EASMDomain\n| summarize Time = max(TimeGenerated)\n| where isnotempty(Time)"
+                    },
+                    {
+                      "name": "EASMHost",
+                      "lastDataReceivedQuery": "EASMHost\n| summarize Time = max(TimeGenerated)\n| where isnotempty(Time)"
+                    },
+                    {
+                      "name": "EASMPage",
+                      "lastDataReceivedQuery": "EASMPage\n| summarize Time = max(TimeGenerated)\n| where isnotempty(Time)"
+                    },
+                    {
+                      "name": "EASMSslCert",
+                      "lastDataReceivedQuery": "EASMSslCert\n| summarize Time = max(TimeGenerated)\n| where isnotempty(Time)"
+                    },
+                    {
+                      "name": "EASMAutonomousSystem",
+                      "lastDataReceivedQuery": "EASMAutonomousSystem\n| summarize Time = max(TimeGenerated)\n| where isnotempty(Time)"
+                    },
+                    {
+                      "name": "EASMIpBlock",
+                      "lastDataReceivedQuery": "EASMIpBlock\n| summarize Time = max(TimeGenerated)\n| where isnotempty(Time)"
+                    },
+                    {
+                      "name": "EASMIpAddress",
+                      "lastDataReceivedQuery": "EASMIpAddress\n| summarize Time = max(TimeGenerated)\n| where isnotempty(Time)"
+                    }
+                  ],
                   "connectivityCriterias": [
                     {
                       "type": "EASM"
@@ -91,8 +184,8 @@
                     ]
                   },
                   "availability": {
-                    "status": 2,
-                    "isPreview": false
+                    "isPreview": false,
+                    "status": 2
                   },
                   "instructionSteps": [
                     {
@@ -213,17 +306,111 @@
           "title": "Microsoft Defender External Attack Surface Management",
           "publisher": "Microsoft",
           "descriptionMarkdown": "MDEASM data connector gives richer insights into security events by supplementing details about externally exposed assets and their attack surfaces. Data from this connector helps identify and monitor internet-facing resources, vulnerabilities, and potential security risks across your organization's external attack surface. [Learn about MDEASM.](https://learn.microsoft.com/en-us/azure/external-attack-surface-management/overview)",
-          "graphQueries": "[variables('TemplateEmptyArray')]",
-          "dataTypes": "[variables('TemplateEmptyArray')]",
+          "graphQueries": [
+            {
+              "metricName": "Total data received",
+              "legend": "EASMDomain",
+              "baseQuery": "EASMDomain"
+            },
+            {
+              "metricName": "Total data received",
+              "legend": "EASMHost",
+              "baseQuery": "EASMHost"
+            },
+            {
+              "metricName": "Total data received",
+              "legend": "EASMPage",
+              "baseQuery": "EASMPage"
+            },
+            {
+              "metricName": "Total data received",
+              "legend": "EASMSslCert",
+              "baseQuery": "EASMSslCert"
+            },
+            {
+              "metricName": "Total data received",
+              "legend": "EASMAutonomousSystem",
+              "baseQuery": "EASMAutonomousSystem"
+            },
+            {
+              "metricName": "Total data received",
+              "legend": "EASMIpBlock",
+              "baseQuery": "EASMIpBlock"
+            },
+            {
+              "metricName": "Total data received",
+              "legend": "EASMIpAddress",
+              "baseQuery": "EASMIpAddress"
+            }
+          ],
+          "dataTypes": [
+            {
+              "name": "EASMDomain",
+              "lastDataReceivedQuery": "EASMDomain\n| summarize Time = max(TimeGenerated)\n| where isnotempty(Time)"
+            },
+            {
+              "name": "EASMHost",
+              "lastDataReceivedQuery": "EASMHost\n| summarize Time = max(TimeGenerated)\n| where isnotempty(Time)"
+            },
+            {
+              "name": "EASMPage",
+              "lastDataReceivedQuery": "EASMPage\n| summarize Time = max(TimeGenerated)\n| where isnotempty(Time)"
+            },
+            {
+              "name": "EASMSslCert",
+              "lastDataReceivedQuery": "EASMSslCert\n| summarize Time = max(TimeGenerated)\n| where isnotempty(Time)"
+            },
+            {
+              "name": "EASMAutonomousSystem",
+              "lastDataReceivedQuery": "EASMAutonomousSystem\n| summarize Time = max(TimeGenerated)\n| where isnotempty(Time)"
+            },
+            {
+              "name": "EASMIpBlock",
+              "lastDataReceivedQuery": "EASMIpBlock\n| summarize Time = max(TimeGenerated)\n| where isnotempty(Time)"
+            },
+            {
+              "name": "EASMIpAddress",
+              "lastDataReceivedQuery": "EASMIpAddress\n| summarize Time = max(TimeGenerated)\n| where isnotempty(Time)"
+            }
+          ],
           "connectivityCriterias": [
             {
               "type": "EASM"
             }
           ],
-          "sampleQueries": "[variables('TemplateEmptyArray')]",
+          "sampleQueries": [
+            {
+              "description": "EASMDomain logs",
+              "lastDataReceivedQuery": "EASMDomain\n| sort by TimeGenerated"
+            },
+            {
+              "description": "EASMHost logs",
+              "lastDataReceivedQuery": "EASMHost\n| sort by TimeGenerated"
+            },
+            {
+              "description": "EASMPage logs",
+              "lastDataReceivedQuery": "EASMPage\n| sort by TimeGenerated"
+            },
+            {
+              "description": "EASMSslCert logs",
+              "lastDataReceivedQuery": "EASMSslCert\n| sort by TimeGenerated"
+            },
+            {
+              "description": "EASMAutonomousSystem logs",
+              "lastDataReceivedQuery": "EASMAutonomousSystem\n| sort by TimeGenerated"
+            },
+            {
+              "description": "EASMIpBlock logs",
+              "lastDataReceivedQuery": "EASMIpBlock\n| sort by TimeGenerated"
+            },
+            {
+              "description": "EASMIpAddress logs",
+              "lastDataReceivedQuery": "EASMIpAddress\n| sort by TimeGenerated"
+            }
+          ],
           "availability": {
-            "status": 2,
-            "isPreview": false
+            "isPreview": false,
+            "status": 2
           },
           "permissions": {
             "tenant": [
@@ -285,7 +472,7 @@
         "contentKind": "Solution",
         "contentProductId": "[variables('_solutioncontentProductId')]",
         "id": "[variables('_solutioncontentProductId')]",
-        "icon": "<img src=\"https://raw.githubusercontent.com/Azure/Azure-Sentinel/master/Logos/Microsoft-Defender-EASM.svg\" width=\"75px\" height=\"75px\">",
+        "icon": "<img src=\"https://raw.githubusercontent.com/Azure/Azure-Sentinel/master/Logos/MicrosoftDefenderEASM.svg\" width=\"75px\" height=\"75px\">",
         "contentId": "[variables('_solutionId')]",
         "parentId": "[variables('_solutionId')]",
         "source": {
@@ -312,13 +499,13 @@
             }
           ]
         },
-        "firstPublishDate": "2026-04-01",
+        "firstPublishDate": "2026-03-15",
         "providers": [
           "Microsoft"
         ],
         "categories": {
           "domains": [
-            "Cloud Provider"
+            "Security - Threat Intelligence"
           ]
         }
       },
