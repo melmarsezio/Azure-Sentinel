@@ -1,9 +1,9 @@
 {
     "id": "EASM",
-    "title": "Microsoft Defender External Attack Surface Management",
+    "title": "Internet Attack Surface",
     "publisher": "Microsoft",
     "logo": "MicrosoftDefenderEASM.svg",
-    "descriptionMarkdown": "MDEASM data connector gives richer insights into security events by supplementing details about externally exposed assets and their attack surfaces. Data from this connector helps identify and monitor internet-facing resources, vulnerabilities, and potential security risks across your organization's external attack surface. [Learn about MDEASM.](https://learn.microsoft.com/en-us/azure/external-attack-surface-management/overview)",
+    "descriptionMarkdown": "Internet Attack Surface data connector gives richer insights into security events by supplementing details about externally exposed assets and their attack surfaces. Data from this connector helps identify and monitor internet-facing resources, vulnerabilities, and potential security risks across your organization's external attack surface. [Learn about MDEASM.](https://learn.microsoft.com/en-us/azure/external-attack-surface-management/overview)",
     "graphQueries": [],
     "sampleQueries": [],
     "dataTypes": [],
@@ -28,7 +28,7 @@
                 {
                     "parameters": {
                         "type": "EASM",
-                        "description": "Connect Microsoft Defender External Attack Surface Management (EASM) assets to ingest into Microsoft Sentinel Lake.",
+                        "description": "Enable the Internet Attack Surface data connector to start ingesting data into Microsoft Sentinel. If you have a Microsoft EASM workspace, this will be used as the source-of-truth for your assets. If you have more than one, the oldest workspace will be used. If you have no EASM workspaces, a best-effort approach will be made to automatically determine your attack surface based on internal tenant telemetry. The following asset types will be imported:",
                         "items": [
                             {
                                 "label": "EASMDomain"
