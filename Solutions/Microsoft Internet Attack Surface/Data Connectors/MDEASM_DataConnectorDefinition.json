@@ -1,9 +1,9 @@
 {
     "id": "EASM",
-    "title": "Internet Attack Surface",
+    "title": "Microsoft Internet Attack Surface",
     "publisher": "Microsoft",
     "logo": "MicrosoftDefenderEASM.svg",
-    "descriptionMarkdown": "Internet Attack Surface data connector gives richer insights into security events by supplementing details about externally exposed assets and their attack surfaces. Data from this connector helps identify and monitor internet-facing resources, vulnerabilities, and potential security risks across your organization's external attack surface. [Learn about MDEASM.](https://learn.microsoft.com/en-us/azure/external-attack-surface-management/overview)",
+    "descriptionMarkdown": "Microsoft Internet Attack Surface data connector gives richer insights into security events by supplementing details about externally exposed assets and their attack surfaces. Data from this connector helps identify and monitor internet-facing resources, vulnerabilities, and potential security risks across your organization's external attack surface. [Learn about Microsoft Internet Attack Surface.](https://learn.microsoft.com/en-us/azure/external-attack-surface-management/overview)",
     "graphQueries": [],
     "sampleQueries": [],
     "dataTypes": [],
@@ -24,11 +24,13 @@
     },
     "instructionSteps": [
         {
+            "title": "Connect Microsoft Internet Attack Surface data connector to your Microsoft Sentinel",
+            "description": "- If you have a Microsoft Defender EASM workspace, this will be used as the source-of-truth for your assets.\n- If you have more than one Microsoft Defender EASM workspace, the oldest workspace will be used.\n- If you have no Microsoft Defender EASM workspace, a best-effort approach will be made to automatically determine your attack surface based on internal tenant telemetry.",
             "instructions": [
                 {
                     "parameters": {
                         "type": "EASM",
-                        "description": "Enable the Internet Attack Surface data connector to start ingesting data into Microsoft Sentinel. If you have a Microsoft EASM workspace, this will be used as the source-of-truth for your assets. If you have more than one, the oldest workspace will be used. If you have no EASM workspaces, a best-effort approach will be made to automatically determine your attack surface based on internal tenant telemetry. The following asset types will be imported:",
+                        "description": "The following asset types will be ingested:",
                         "items": [
                             {
                                 "label": "EASMDomain"
